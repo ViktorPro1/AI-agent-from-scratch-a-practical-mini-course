@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Крок 2: Побудова власного AI-помічника (Розширена версія)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 15px;
+            background: #6a5acd;
+            color: white;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-align: center;
+            color: #333;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #6a5acd;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-home {
+            display: block;
+            width: 220px;
+            margin: 25px auto;
+            padding: 12px;
+            text-align: center;
+            background: #6a5acd;
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .tip {
+            background: #fffae6;
+            border-left: 5px solid #ffd700;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .subsection {
+            margin-top: 30px;
+        }
+
+        ul,
+        ol {
+            margin-bottom: 15px;
+        }
+
+        .ai-image {
+            display: block;
+            margin: 15px auto 20px;
+            max-width: 50%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Адаптив для екранів <= 420px */
+        @media (max-width: 420px) {
+            .container {
+                margin: 10px;
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                margin-top: 15px;
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                font-size: 1.3em;
+                margin-top: 12px;
+                margin-bottom: 8px;
+            }
+
+            h3 {
+                font-size: 1.1em;
+                margin-top: 10px;
+                margin-bottom: 6px;
+            }
+
+            p {
+                font-size: 0.95em;
+                margin-bottom: 12px;
+            }
+
+            .btn-home {
+                width: 100%;
+                padding: 10px;
+                margin: 20px auto;
+            }
+
+            .tip {
+                padding: 8px;
+                margin: 10px 0;
+                font-size: 0.9em;
+            }
+
+            .ai-image {
+                max-width: 90%;
+                margin: 10px auto 15px;
+            }
+
+            ul,
+            ol {
+                margin-bottom: 10px;
+                padding-left: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Крок 2: Побудова власного AI-помічника</h1>
+
+    </header>
+
+    <img src="images/ai-helper.webp" alt="AI-помічник" class="ai-image">
+    <div class="container">
+        <p>Цей розділ максимально детально пояснює, як створити власного AI-помічника. Ми розглянемо кожен аспект: від
+            вибору мов програмування до інтеграції голосових технологій, готових бібліотек та платформ, включно з
+            безкоштовними сервісами. Для початківців важливо зрозуміти логіку роботи AI-помічника: він приймає запити
+            користувача, обробляє інформацію та надає відповіді, а також може озвучувати ці відповіді.</p>
+
+
+        <h2 class="subsection">1. Основні компоненти AI-помічника</h2>
+        <p>Щоб AI-помічник працював ефективно, потрібно поділити його на кілька логічних блоків:</p>
+        <ul>
+            <li><strong>Обробка тексту:</strong> AI аналізує, що вводить користувач. Тут важливо враховувати синоніми,
+                помилки та різні формулювання запитань.</li>
+            <li><strong>Генерація відповідей:</strong> Мовна модель створює текст, враховуючи контекст запиту, базу
+                знань та навчальні дані.</li>
+            <li><strong>Інтерфейс взаємодії:</strong> Веб-чат, мобільний додаток або голосовий помічник. Інтерфейс
+                повинен бути простим, інтуїтивним та зручним.</li>
+            <li><strong>База знань:</strong> Джерело інформації, з якої AI отримує факти та дані. Це можуть бути власні
+                документи, API сторонніх сервісів або відкриті бази даних.</li>
+        </ul>
+
+        <div class="tip">
+            <strong>Лайфхак:</strong> Почніть з невеликого обсягу знань і базового набору функцій. Так простіше
+            відслідковувати помилки та покращувати роботу помічника.
+        </div>
+
+        <h2 class="subsection">2. Інструменти та мови програмування</h2>
+        <p>Для створення AI-помічника найчастіше використовують:</p>
+        <ul>
+            <li>Python – проста і популярна мова, яка має багато бібліотек для AI.</li>
+            <li>Flask або FastAPI – для створення веб-сервера вашого AI.</li>
+            <li>JavaScript, HTML, CSS – для фронтенду, щоб користувач міг взаємодіяти з помічником через веб-інтерфейс.
+            </li>
+            <li>Бази даних: SQLite, PostgreSQL або MongoDB для збереження інформації та логів запитів.</li>
+        </ul>
+
+        <div class="tip">
+            <strong>Порада:</strong> Не намагайтеся одразу зробити повністю функціональний AI. Почніть з базових
+            можливостей, а потім розширюйте.
+        </div>
+
+        <h2 class="subsection">3. Використання голосових технологій (ElevenLabs)</h2>
+        <p>Один із найпопулярніших способів зробити AI-помічника “живим” – інтегрувати голосовий синтез. <a
+                href="https://elevenlabs.io/">ElevenLabs</a> дозволяє перетворювати текст у натуральний людський голос.
+            Це робить взаємодію з користувачем більш природною.</p>
+
+        <p>Як створити голосовий AI за допомогою ElevenLabs:</p>
+        <ol>
+            <li>Зареєструйтесь на <a href="https://elevenlabs.io/">офіційному сайті</a>.</li>
+            <li>Виберіть голос (чоловічий, жіночий або кастомізований) і налаштуйте швидкість, тон та емоційність.</li>
+            <li>Введіть текст, який AI має озвучити.</li>
+            <li>Завантажте отриманий аудіофайл у форматі MP3 або WAV.</li>
+            <li>Інтегруйте його у веб-чат за допомогою тегу `<audio>` або через JavaScript, щоб AI відповідав голосом.
+            </li>
+        </ol>
+
+        <div class="tip">
+            <strong>Лайфхак:</strong> Можна поєднати ElevenLabs з OpenAI API. AI генерує текст → ElevenLabs озвучує →
+            користувач чує реалістичну відповідь. Це робить вашого помічника живим та інтерактивним.
+        </div>
+
+        <h2 class="subsection">4. Безкоштовні платформи для створення AI</h2>
+        <p>Є кілька сервісів, які дозволяють почати створення AI-помічника безкоштовно:</p>
+        <ul>
+            <li><a href="https://platform.openai.com/">OpenAI Free Tier</a> – можна тестувати GPT-моделі безкоштовно,
+                обмежена кількість запитів.</li>
+            <li><a href="https://huggingface.co/">Hugging Face</a> – безкоштовна інтеграція готових моделей AI, можна
+                запускати локально або у хмарі.</li>
+            <li><a href="https://deepai.org/">DeepAI</a> – різні AI API для тексту, зображень та обробки даних.</li>
+            <li><a href="https://text-synth.com/">TextSynth</a> – безкоштовне використання мовних моделей, можна
+                генерувати текст.</li>
+            <li><a href="https://cogram.com/">Cogram AI</a> – допомагає створювати AI-асистента для коду та документів.
+            </li>
+        </ul>
+
+        <div class="tip">
+            <strong>Порада:</strong> Починайте з безкоштовних платформ, щоб зрозуміти принципи роботи AI, а потім
+            переходьте на платні тарифи для розширеної функціональності.
+        </div>
+
+        <h2 class="subsection">5. Джерела даних</h2>
+        <p>Для коректної роботи AI-помічника потрібні дані:</p>
+        <ul>
+            <li>Власні тексти та документи</li>
+            <li>API зовнішніх сервісів (новини, погода, фінанси, довідники)</li>
+            <li>Бази знань у форматі JSON, CSV, SQL</li>
+        </ul>
+
+        <p>Щоб AI міг давати точні відповіді, важливо структурувати дані. Кожен запит користувача повинен порівнюватися
+            з базою знань і формувати контекст відповіді.</p>
+
+        <h2 class="subsection">6. Тестування і вдосконалення</h2>
+        <p>Навіть базовий AI-помічник потребує тестування:</p>
+        <ul>
+            <li>Перевірка відповідей на типові запити користувачів.</li>
+            <li>Логування всіх запитів для аналізу та вдосконалення.</li>
+            <li>Поступове розширення бази знань та можливостей.</li>
+            <li>Використання A/B тестування для покращення алгоритмів.</li>
+        </ul>
+
+        <div class="tip">
+            <strong>Лайфхак:</strong> Для веб-чатів у реальному часі використовуйте <a
+                href="https://socket.io/">Socket.IO</a>. Це дозволяє AI миттєво відповідати користувачу.
+        </div>
+
+        <h2 class="subsection">7. Поради та практичні приклади</h2>
+        <p>Коли ви починаєте будувати AI-помічника, варто розглянути приклади:</p>
+        <ul>
+            <li>Чат-бот для підтримки клієнтів на сайті</li>
+            <li>Голосовий помічник для навчальних платформ</li>
+            <li>AI для автоматичного генерування контенту та звітів</li>
+            <li>Персональний AI-помічник для організації задач та нотаток</li>
+        </ul>
+
+        <p>Завдяки поєднанню OpenAI API, ElevenLabs та безкоштовних платформ, ви можете створити AI-помічника без
+            великих витрат і без складного серверного обладнання.</p>
+
+        <a href="index.html" class="btn-home">На головну</a>
+        <a href="module3.html" class="btn-home">Завершити та наступний крок</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("Розширений модуль 2 завантажено. Готовий до побудови AI-помічника з голосовими функціями та безкоштовними платформами!");
+        });
+    </script>
+</body>
+
+</html>
